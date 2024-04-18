@@ -1,0 +1,967 @@
+@import normalize
+@import reset
+@import variables
+
+@import '../fonts/Fira/stylesheet.css'
+@import '../fonts/DroidSans/stylesheet.css'
+@import '../fonts/Rubik/stylesheet.css'
+
+
+*
+    box-sizing: border-box
+
+img
+    display: block //чтоб блок, в котором картинки не увеличивался
+
+body
+    font-family: "Droid Sans"
+    font-size: 20px
+    color: rgba(255, 255, 255, 0.8)
+    background-color: $body-bg
+
+p
+    line-height: 150%
+
+a
+    text-decoration: none
+    color: white
+
+input, textarea
+    outline: none
+    background-color: transparent
+    color: rgba(255, 255, 255, 0.8)
+
+textarea
+    resize: none
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.8)
+    -webkit-box-shadow: 0 0 0px 1000px #1A1B1D inset
+    box-shadow: 0 0 0px 1000px #1A1B1D inset
+    transition: background-color 5000s ease-in-out 0s
+    caret-color: rgba(255, 255, 255, 0.8)
+
+button
+    border: none
+    outline: none
+    background: none
+    cursor: pointer
+
+.yellow
+    color: $yellow
+
+.mb-12
+    margin-bottom: 12px
+
+.small
+    font-family: "Droid Sans"
+    font-size: 16px
+    line-height: 150%
+
+    a
+        color: rgba(255, 255, 255, 0.8)
+        transition: color 0.3s
+
+    a:hover
+        color: $yellow
+        transition: color 0.3s
+
+.light
+    font-family: "Droid Sans"
+    font-size: 12px
+    line-height: 130%
+
+.body-bold
+    font-family: "Droid Sans"
+    font-size: 20px
+    font-weight: bold
+    color: white
+
+h1
+    font-family: "Rubik"
+    font-size: 76px
+    line-height: 100%
+    color: white
+
+h2
+    font-family: "Rubik"
+    font-size: 62px
+    line-height: 110%
+    color: white
+    text-align: center
+    margin-bottom: $title-margin
+
+h3
+    font-family: "Rubik"
+    font-size: 48px
+    color: white
+
+h4
+    font-family: "Rubik"
+    font-size: 40px
+    color: white
+
+h5
+    font-family: "Rubik"
+    font-size: 30px
+    line-height: 110%
+    color: white
+
+h6
+    font-family: "Rubik"
+    font-size: 24px
+    line-height: 100%
+    color: white
+
+
+.wrapper
+    margin: 0 auto
+    width: 1140px
+
+.show
+    visibility: visible !important
+    opacity: 1 !important
+    transition: all 0.3s
+
+.header
+    background-image: url("../img/main-bg.png")
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    height: 758px
+    margin-bottom: $section-margin
+
+    &__wrapper
+        position: relative
+        padding-top: 218px
+
+    &__logo
+        font-family: "Fira Code", SansSerif
+        font-weight: bold
+        font-size: 24px
+
+        span:first-child
+            margin-right: 4px
+
+        span:last-child
+            color: white
+
+    &__nav
+        color: white
+
+    &__nav-mobil, &__mobile-menu
+        display: none
+
+    &__menu
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+
+    &__menu-wrapper
+        position: absolute
+        top: 0
+        padding-top: 20px
+        padding-bottom: 28px
+        width: 100%
+
+    &__list
+        display: flex
+
+    &__item
+        margin-right: 40px
+        transition: all 0.3s
+        position: relative
+
+        &:last-child
+            margin-right: 0
+
+        &:hover
+            color: $yellow
+            transition: all 0.3s
+            &::before
+                visibility: visible
+                transform: translateY(-8px)
+                opacity: 1
+
+        &::before
+            content: ''
+            width: 100%
+            height: 1px
+            border-radius: 1px
+            background-color: $yellow
+            position: absolute
+            bottom: -16px
+            left: 0
+            transition: transform .3s, opacity .3s, visibility 0.3s
+            opacity: 0
+            visibility: hidden
+
+        &_selected
+            color: $yellow
+
+            &::before
+                visibility: visible
+                transform: translateY(-8px)
+                opacity: 1
+
+    &__lang
+        display: flex
+        align-items: center
+        position: relative
+        //padding: 5px
+        z-index: 2
+
+    &__lang-box
+        position: relative
+        cursor: pointer
+        user-select: none
+
+    &__lang-second
+        position: absolute
+        background-color: #3F4247
+        top: -20px //-15px
+        left: -12px //-7px
+        border-radius: 4px
+        visibility: collapse
+        opacity: 0
+        transition: all 0.3s
+
+    &__first-lang
+        height: 46px
+        width: 67px
+
+    &__second-lang
+        width: 67px
+        padding-top: 10px
+        padding-bottom: 20px
+        padding-left: 12px
+
+        img
+            height: 16px
+            width: 26px
+            object-fit: cover
+
+    &__lang-selected
+        height: 16px
+        width: 26px
+        object-fit: cover
+        margin-right: 8px
+
+    &__lang-arrow
+        transition: all 0.3s
+
+    &__content
+        width: 715px
+
+    &__title
+        margin-bottom: 20px
+
+    &__description
+        margin-bottom: 40px
+
+    &__btn
+        padding: 20px 28px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 12px
+        background-color: #1A1B1D
+        cursor: pointer
+        transition: all 0.3s
+
+        &:hover
+            background-color: #25272a
+            transition: all 0.3s
+
+    &__btn-title
+        margin-right: 8px
+
+.show-menu
+    background: rgba(26, 27, 31, 0.9)
+    animation: fadeIn 0.5s
+    animation-fill-mode: forwards
+    position: fixed
+    z-index: 10
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        top: -50px
+
+    100%
+        opacity: 1
+        top: 0
+
+.hide-menu
+    animation: fadeOut 0.5s
+    animation-fill-mode: forwards
+
+    .header__lang-second
+        visibility: collapse !important
+
+@keyframes fadeOut
+    0%
+        opacity: 1
+        top: 0
+
+    80%
+        opacity: 0
+        top: -50px
+
+    100%
+        top: 0px
+        opacity: 0
+        visibility: collapse
+
+.not-bg
+    background-color: rgba(41, 43, 46, 0)
+    transition: all 0.3s
+
+.aims
+    margin-bottom: $section-margin
+
+    &__block
+        display: flex
+        justify-content: space-between
+
+    &__item
+        width: 261px
+        text-align: center
+        border-radius: 20px
+        border: 3px solid #7C7C7C
+        padding: 40px 0 60px 0
+
+    &__img
+        margin-bottom: 32px
+        display: flex
+        justify-content: center
+
+.steps
+    margin-bottom: $section-margin
+
+    &__block
+        display: flex
+
+    &__list
+        background-color: #161719
+        border-top-right-radius: 32px
+        border-bottom-right-radius: 32px
+        height: 782px
+        width: 100%
+        padding: 60px
+
+    &__item
+        display: flex
+        align-items: center
+
+    &__num
+        height: 77px
+        width: 77px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 100px
+        margin-right: 32px
+        font-family: "Rubik"
+        font-size: 30px
+        line-height: 110%
+        color: white
+        border: 3px solid #292B2E
+
+    &__num-first
+        background-color: #292B2E
+
+    &__union
+        width: 77px
+        display: flex
+        justify-content: center
+
+    &__line
+        width: 3px
+        height: 40px
+        background-color: #292B2E
+
+.services
+    margin-bottom: $section-margin
+
+    &__block
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+
+    &__item
+        padding: 60px 39px
+        width: 360px
+        background-color: #3b3e42
+        border-radius: 20px
+        margin-bottom: 32px
+        position: relative
+        height: 485px
+
+        &:nth-child(n+4)
+            margin-bottom: 0
+
+    &__icon
+        margin-bottom: 32px
+
+    &__title
+        margin-bottom: 20px
+
+    &__description
+        margin-bottom: 60px
+
+    &__detail
+        cursor: pointer
+        display: flex
+        align-items: center
+        position: absolute //relative
+        width: 200px
+        top: 366px
+
+
+    &__detail:hover &__show
+        opacity: 1
+        visibility: visible
+        transition: all 0.3s 0.2s
+
+    &__detail:hover &__detail-icon
+        transition: all 0.5s
+        transform: translateX(140px)
+
+    &__detail-icon
+        display: inline
+        transition: all 0.5s ease-in
+        line-height: 100%
+
+    &__show
+        position: absolute
+        opacity: 0
+        visibility: collapse
+        transition: all 0.2s
+        color: $yellow
+
+.adv
+    margin-bottom: $section-margin
+
+    &__block
+        position: relative
+        margin-top: -53px
+        display: flex
+        align-items: center
+
+        img
+            height: 652px
+            width: 652px
+            object-fit: cover
+
+    &__block:first-child
+        margin-top: 0
+
+    &__block:nth-child(2n)
+        display: flex
+        flex-direction: row-reverse
+
+    &__block:nth-child(2n) &__description
+        left: 0px
+
+    &__description
+        width: 765px
+        background-color: rgba(59, 62, 66, 0.8)
+        padding: 40px
+        position: absolute
+        right: 0px
+
+        h4
+            margin-bottom: 12px
+
+.questions
+    margin-bottom: $section-margin
+
+    &__item
+        border: 3px solid #3b3e42
+        border-radius: 32px
+        margin-bottom: 32px
+        position: relative
+
+    &__item-header
+        display: flex
+        justify-content: space-between
+        cursor: pointer
+        transition: all 0.3s
+        user-select: none
+        padding: 32px
+
+    &__answer
+        opacity: 0
+        visibility: hidden
+        height: 0
+        transition: all 0.5s
+        overflow: hidden
+        padding: 0 32px
+
+    &__answer-wrapper
+        border-top: 3px solid #3b3e42
+        padding: 32px 0
+
+    &__answer-show
+        opacity: 1
+        visibility: visible
+        margin-top: 0
+        transition: all 0.5s
+        height: 200px
+
+    &__minus
+        position: absolute
+        top: 32px
+        right: 32px
+        opacity: 0
+        visibility: hidden
+        transition: all 0.3s
+        transform: rotate(-90deg)
+
+    &__show-minus
+        opacity: 1
+        visibility: visible
+        transition: all 0.3s
+        transform: rotate(0deg)
+
+    &__plus
+        transition: all 0.3s
+
+    &__hidden-plus
+        transform: rotate(90deg)
+        opacity: 0
+        visibility: hidden
+        transition: all 0.3s
+
+.tech
+    margin-bottom: $section-margin
+    &__block
+        margin: 0 auto
+        user-select: none
+
+        img
+            height: 180px
+            width: 180px
+            object-fit: cover
+
+.contact
+    background-image: url("../img/contact-bg.png")
+    background-repeat: no-repeat
+    background-size: cover
+
+    &__wrapper
+        padding-top: $title-margin
+        padding-bottom: $title-margin
+        display: flex
+        justify-content: space-between
+
+    &__info
+        width: 490px
+
+    &__title
+        margin-bottom: 32px
+
+    &__form-block
+        background-color: #1A1B1D
+        padding: 40px
+        width: 586px
+        border-radius: 40px
+
+    &__input
+        border: 3px solid #292B2E
+        border-radius: 24px
+        width: 100%
+        padding: 14px 20px
+        margin-bottom: 20px
+
+    &__textarea
+        border: 3px solid #292B2E
+        border-radius: 24px
+        width: 100%
+        height: 256px
+        padding: 14px 20px
+        margin-bottom: 40px
+        resize: none
+
+    &__btn
+        background-color: #292B2E
+        transition: all 0.3s
+
+        &:hover
+            background-color: #313336
+            transition: all 0.3s
+
+#contact-send
+    display: none
+
+
+.footer
+    background-color: #27272c
+    padding-top: 80px
+    padding-bottom: 80px
+
+    &__logo
+        text-align: center
+        margin-bottom: 32px
+
+    &__menu
+        text-align: center
+        margin-bottom: 40px
+        font-weight: bold
+
+        a
+            margin-right: 40px
+
+        a:last-child
+            margin-right: 0
+
+    &__line
+        margin-bottom: 40px
+
+    &__rights
+        text-align: center
+
+//Chat
+.chat-font
+    font-family: "Droid Sans"
+    font-size: 16px
+    line-height: 130%
+
+.chat-icon
+    position: fixed
+    cursor: pointer
+    bottom: 32px
+    right: 32px
+    z-index: 5
+    transition: all 0.3s
+    opacity: 1
+    visibility: visible
+
+.hide-chat-icon
+    opacity: 0
+    visibility: hidden
+    transition: all 0.3s
+
+.chat
+    opacity: 0
+    visibility: hidden
+    position: fixed
+    bottom: -40px
+    right: 0px
+    background-color: #1B1A29
+    border-top-left-radius: 32px
+    border-top-right-radius: 32px
+    border: 3px solid #3b3e42
+    z-index: 11
+    height: 562px
+    //transition: opacity 0.1s, visibility 0.1s, bottom 0.2s
+
+    &__header
+        padding: 0 40px
+        margin-bottom: 20px
+
+    &__header-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px 0
+        border-bottom: 1px solid #3b3e42
+
+    &__box-wrapper
+        width: 554px
+        padding-right: 12px
+        margin-bottom: 20px
+        position: relative
+
+    &__box
+        height: 380px
+        padding-left: 40px
+        padding-right: 28px
+        //transition: height 0.3s
+
+    &__admin-mes
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 8px
+
+    &__icon-content
+        display: flex
+
+    &__admin-icon
+        margin-right: 12px
+        padding-top: 5px
+
+    &__admin-content
+        padding: 12px
+        border-radius: 12px
+        background-color: #293445
+        max-width: 356px
+
+        &_next
+            margin-left: 47px
+
+    &__user-mes
+        padding-left: 47px
+        margin-top: 12px
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        &_next
+            margin-top: 8px
+
+    &__user-time
+        margin-right: 20px
+
+    &__user-content
+        background: #2B599F
+        border-radius: 12px
+        padding: 12px
+
+    &__day
+        width: 130px
+        height: 40px
+        margin: 20px auto
+        border: 2px solid #458485
+        border-radius: 8px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-weight: bold
+        color: white
+
+    &__panel
+        padding: 12px 32px 12px 40px
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        background: #3b3e42
+        position: absolute
+        bottom: 0
+        width: 100%
+        z-index: 2
+        //height: 66px
+        //transition: height 0.3s
+
+    &__file
+        height: 42px
+        display: flex
+        align-items: center
+
+        label
+            cursor: pointer
+
+        input
+            display: none
+
+    &__area-wrapper
+        display: flex
+        align-items: center
+        min-height: 42px
+        //border: 1px solid red //если нужна границы
+
+    &__area
+        background: #3b3e42
+        border: none
+        width: 372px
+        min-height: 24px
+        height: 24px
+        overflow-y: hidden
+        overscroll-behavior-y: none
+        scrollbar-color: #458485 rgba(69, 132, 133, 0.4)
+        outline: none
+
+    &__input:-webkit-autofill,
+    &__input:-webkit-autofill:hover,
+    &__input:-webkit-autofill:focus
+        -webkit-text-fill-color: rgba(255, 255, 255, 0.8)
+        -webkit-box-shadow: 0 0 0px 1000px #3b3e42 inset
+        box-shadow: 0 0 0px 1000px #3b3e42 inset
+        transition: background-color 5000s ease-in-out 0s
+        caret-color: rgba(255, 255, 255, 0.8)
+
+    &__close
+        cursor: pointer
+
+.show-chat
+    opacity: 1
+    visibility: visible
+    bottom: 0px
+    transition: all 0.2s
+
+
+//ScrollBar
+.simplebar-content-wrapper
+    overscroll-behavior-y: none
+
+.simplebar-track
+    width: 8px !important
+    border-radius: 8px !important
+    background-color: rgba(69, 132, 133, 0.4)
+
+.simplebar-scrollbar
+    border-radius: 8px
+    width: 8px
+    background-color: #458485
+
+    &::before
+        background-color: #458485
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        transition: opacity 0.2s 1s linear
+
+.simplebar-scrollbar.simplebar-visible:before
+    opacity: 1
+    transition-delay: 0s
+    transition-duration: 0s
+
+//Background animation
+.area
+    //background: #1B1A29
+    //background: -webkit-linear-gradient(to right, #15121F, #362F4E)
+    //background: linear-gradient(to right, #15121F, #362F4E)
+    //background-size: contain
+    width: 100%
+    height: 100%
+    position: absolute
+    bottom: 0
+    left: 0px
+
+.circles
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+
+.circles li
+    position: absolute
+    display: block
+    list-style: none
+    width: 20px
+    height: 20px
+    background: rgba(255, 255, 255, 0.2)
+    animation: animate 25s linear infinite
+    bottom: -150px
+
+
+.circles li:nth-child(1)
+    left: 25%
+    width: 80px
+    height: 80px
+    animation-delay: 0s
+
+.circles li:nth-child(2)
+    left: 10%
+    width: 20px
+    height: 20px
+    animation-delay: 2s
+    animation-duration: 12s
+
+
+.circles li:nth-child(3)
+    left: 70%
+    width: 20px
+    height: 20px
+    animation-delay: 4s
+
+
+.circles li:nth-child(4)
+    left: 40%
+    width: 60px
+    height: 60px
+    animation-delay: 0s
+    animation-duration: 18s
+
+
+.circles li:nth-child(5)
+    left: 65%
+    width: 20px
+    height: 20px
+    animation-delay: 0s
+
+
+.circles li:nth-child(6)
+    left: 75%
+    width: 110px
+    height: 110px
+    animation-delay: 3s
+
+.circles li:nth-child(7)
+    left: 35%
+    width: 150px
+    height: 150px
+    animation-delay: 7s
+
+
+.circles li:nth-child(8)
+    left: 50%
+    width: 25px
+    height: 25px
+    animation-delay: 15s
+    animation-duration: 45s
+
+.circles li:nth-child(9)
+    left: 20%
+    width: 15px
+    height: 15px
+    animation-delay: 2s
+    animation-duration: 35s
+
+.circles li:nth-child(10)
+    left: 85%
+    width: 150px
+    height: 150px
+    animation-delay: 0s
+    animation-duration: 11s
+
+@keyframes animate
+    0%
+        transform: translateY(0) rotate(0deg)
+        opacity: 1
+        border-radius: 0
+
+
+    100%
+        transform: translateY(-1000px) rotate(720deg)
+        opacity: 0
+        border-radius: 50%
+
+//Scroll Google
+    &__box::-webkit-scrollbar
+        width: 6px
+        height: 6px
+
+    &__box::-webkit-scrollbar-track
+        border-radius: 10px
+        background: rgba(69, 132, 133, 0.4)
+
+    &__box::-webkit-scrollbar-thumb
+        border-radius: 10px
+        background: #458485
+
+    &__box::-webkit-scrollbar-thumb:hover
+        background: #52a2a4
+
+    &__box::-webkit-scrollbar-thumb:active
+        background: #52a2a4
+
+//Media
+@import 'adaptive/1199'
+@import 'adaptive/991'
+

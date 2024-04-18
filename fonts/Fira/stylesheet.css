@@ -1,0 +1,8 @@
+
+@font-face {
+	font-family: 'Fira Code';
+	src: local('Fira Code'),
+		url('FiraCode-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Як розробляються сайти</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="css/scroll/simplebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__wrapper">
+        <div class="header__menu-wrapper">
+            <div class="wrapper">
+                <div class="header__menu">
+                    <div class="header__logo">
+                        <a href="#">
+                            <span class="yellow">//DEV</span><span>Project</span>
+                        </a>
+                    </div>
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <a href="index.html" class="header__item body-bold"><li>Головна</li></a>
+                            <a href="blog.html" class="header__item body-bold"><li>Блог</li></a>
+                            <a class="header__item body-bold header__item_selected" href="#"><li>Про нас</li></a>
+                            <a class="header__item body-bold" href="#"><li>Контакти</li></a>
+                        </ul>
+                    </nav>
+                    <div class="header__lang-box">
+                        <div class="header__lang-second">
+                            <div class="header__first-lang"></div>
+                            <a href="#">
+                                <div class="header__second-lang"><img src="icons/en-lang.svg"></div>
+                            </a>
+                        </div>
+                        <div class="header__lang">
+                            <img class="header__lang-selected" src="icons/ua-lang.svg">
+                            <img class="header__lang-arrow" src="icons/arrow-bottom.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="about">
+    <div class="wrapper">
+        <h2 class="about__title">Ми займаємось розробкой сайтів, телеграм ботів та інших програм</h2>
+        <h4 class="about__tech-title">Технології, які використовуються</h4>
+        <div class="about__block">
+            <div class="about__part">
+                <h6 class="about__part-title">
+                    Напрям
+                </h6>
+                <div class="about__frontend about__part-selected">
+                    <img src="icons/frontend.svg">
+                    <span class="about__item-title">Frontend</span>
+                </div>
+                <div class="about__backend">
+                    <img src="icons/backend.svg">
+                    <span class="about__backend-title">Backend</span>
+                </div>
+            </div>
+            <div class="about__tech-box">
+                <div class="about__tech about__tech-frontend">
+                    <div class="about__tech-empty"><h6>HTML</h6></div>
+                    <div class="about__tech-block">
+                        <h6 class="about__tech-block-title">CSS</h6>
+                        <div class="about__tech-items">
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Flexbox</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Sass</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__tech-block">
+                        <h6 class="about__tech-block-title">Javascript</h6>
+                        <div class="about__tech-items">
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Webpack</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>React, Redux, Redux Toolkit, Formik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__tech-empty"><h6>Figma</h6></div>
+                </div>
+                <div class="about__tech about__tech-backend hidden">
+                    <div class="about__tech-block">
+                        <h6 class="about__tech-block-title">PHP 8</h6>
+                        <div class="about__tech-items">
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Laravel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__tech-block">
+                        <h6 class="about__tech-block-title">Python 3</h6>
+                        <div class="about__tech-items">
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Django, Django Rest Framework</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>aiogram</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>asyncio, asyncpg, aiohttp, threading, multiprocessing</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>BeautifulSoup4, Selenium</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__tech-block">
+                        <h6 class="about__tech-block-title">Node js</h6>
+                        <div class="about__tech-items">
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Express</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>Socket IO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__tech-block">
+                        <h6 class="about__tech-block-title">Бази даних</h6>
+                        <div class="about__tech-items">
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>SQLite</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>MySQL</span>
+                            </div>
+                            <div class="about__tech-item">
+                                <img src="icons/circle.svg">
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__tech-empty"><h6>Linux</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="wrapper">
+        <div class="header__logo footer__logo">
+            <a href="#">
+                <span class="yellow">//DEV</span><span>Project</span>
+            </a>
+        </div>
+        <div class="footer__menu">
+            <a href="#">Головна</a>
+            <a href="#">Блог</a>
+            <a href="#">Про нас</a>
+            <a href="#">Контaкти</a>
+        </div>
+        <hr class="footer__line">
+        <div class="footer__rights">Ⓒ Всі права захищені</div>
+    </div>
+</footer>
+
+<img class="chat-icon" src="icons/chat-icon.svg">
+
+<div class="chat">
+    <div class="chat__header">
+        <div class="chat__header-wrapper">
+            <div class="body-bold">Служба підтримки</div>
+            <img class="chat__close" src="icons/close.svg">
+        </div>
+    </div>
+    <div class="chat__box-wrapper">
+        <div class="area" >
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div >
+        <div class="chat__box chat-font" data-simplebar id="mes-box">
+            <div class="chat__admin-mes">
+                <div class="chat__icon-content">
+                    <div class="chat__admin-icon">
+                        <img src="icons/admin.svg">
+                    </div>
+                    <div class="chat__admin-content">
+                        Добрий день! Чим можу допомогти?
+                    </div>
+                </div>
+                <div class="chat__admin-time">12:15</div>
+            </div>
+            <div class="chat__admin-mes">
+                <div class="chat__admin-content chat__admin-content_next">
+                    Добрий день! Чим можу допомогти?
+                </div>
+                <div class="chat__admin-time">12:15</div>
+            </div>
+            <div class="chat__user-mes">
+                <div class="chat__user-time">12:15</div>
+                <div class="chat__user-content">
+                    Добрий день! Хочу замовити сайт для інтернет магазину.
+                    Потрібно реалізувати різні штуки. В яку ціну може це коштувату?
+                </div>
+            </div>
+            <div class="chat__user-mes chat__user-mes_next">
+                <div class="chat__user-time">12:15</div>
+                <div class="chat__user-content">
+                    Та які строки?
+                </div>
+            </div>
+            <div class="chat__day">7 квітня</div>
+            <div class="chat__admin-mes">
+                <div class="chat__icon-content">
+                    <div class="chat__admin-icon">
+                        <img src="icons/admin.svg">
+                    </div>
+                    <div class="chat__admin-content">
+                        Добрий день! Чим можу допомогти?
+                    </div>
+                </div>
+                <div class="chat__admin-time">12:15</div>
+            </div>
+            <div class="chat__admin-mes">
+                <div class="chat__icon-content">
+                    <div class="chat__admin-icon">
+                        <img src="icons/admin.svg">
+                    </div>
+                    <div class="chat__admin-content">
+                        Добрий день! Чим можу допомогти?
+                    </div>
+                </div>
+                <div class="chat__admin-time">12:15</div>
+            </div>
+            <div class="chat__admin-mes">
+                <div class="chat__icon-content">
+                    <div class="chat__admin-icon">
+                        <img src="icons/admin.svg">
+                    </div>
+                    <div class="chat__admin-content">
+                        Добрий день! Чим можу допомогти?
+                    </div>
+                </div>
+                <div class="chat__admin-time">12:15</div>
+            </div>
+        </div>
+    </div>
+    <form class="chat__form" method="get">
+        <div class="chat__panel chat-font">
+            <div class="chat__file">
+                <label for="chat-file"><img src="icons/file.svg"></label>
+                <input id="chat-file" name="file" type="file">
+            </div>
+            <div class="chat__area-wrapper">
+                <textarea class="chat__area" name="content"
+                placeholder="Текст повідомлення..."></textarea>
+            </div>
+            <button type="submit"><img src="icons/send-mes.svg"></button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/scroll/simplebar.js"></script>
+<script src="js/compiled/compiled_script.js"></script>
+<script src="js/technology.js"></script>
+</body>
+</html>

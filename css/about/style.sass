@@ -1,0 +1,119 @@
+@import "../variables"
+
+body
+    background-image: url("../../img/about-bg.png")
+    background-position: center center
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+
+.header
+    background-image: none
+    height: auto
+    margin-bottom: 0
+
+    &__wrapper
+        padding-top: 125px
+
+.about
+    margin-bottom: $title-margin
+
+    &__title
+        text-align: left
+        margin-bottom: 60px
+
+    &__tech-title
+        margin-bottom: 40px
+
+    &__part
+        width: 360px
+        padding: 20px
+        border-radius: 20px
+        background-color: #292B2E
+        color: #fff
+        margin-right: 32px
+        height: 192px
+
+    &__part-title
+        margin-bottom: 20px
+
+    &__frontend, &__backend
+        display: flex
+        align-items: center
+        border-radius: 12px
+        padding: 12px
+        cursor: pointer
+
+        &:hover
+            background-color: #34373b
+
+        img
+            margin-right: 12px
+
+    &__part-selected
+        background-color: #43464B
+
+        &:hover
+            background-color: #43464B
+
+    &__frontend
+        margin-bottom: 12px
+
+    &__block
+        display: flex
+
+    &__tech-box
+        position: relative
+        width: 100%
+        overflow: hidden
+        height: 464px
+        transition: height 0.8s
+
+    &__tech
+        background: #292B2E
+        width: 100%
+        border-radius: 20px
+        padding: 20px
+        top: 0
+        position: absolute
+        transition: all 0.8s
+
+        div:last-child
+            margin-bottom: 0
+
+    &__tech-empty
+        margin-bottom: 20px
+
+    &__tech-block
+        margin-bottom: 20px
+
+    &__tech-block-title
+        margin-bottom: 12px
+
+
+    &__tech-item
+        border-radius: 12px
+        background-color: #43464B
+        padding: 12px
+        display: flex
+        margin-bottom: 8px
+
+        img
+            margin-right: 10px
+
+        &:last-child
+            margin-bottom: 0
+
+.hidden
+    visibility: hidden
+    opacity: 0
+    //transition: all 0.4s
+
+.show-tech
+    top: 0 !important
+    opacity: 1
+    transition: all 0.8s
+
+
+
+

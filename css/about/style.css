@@ -1,0 +1,118 @@
+body {
+  background-image: url("../../img/about-bg.png");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  background-image: none;
+  height: auto;
+  margin-bottom: 0;
+}
+.header__wrapper {
+  padding-top: 125px;
+}
+
+.about {
+  margin-bottom: 80px;
+}
+.about__title {
+  text-align: left;
+  margin-bottom: 60px;
+}
+.about__tech-title {
+  margin-bottom: 40px;
+}
+.about__part {
+  width: 360px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #292B2E;
+  color: #fff;
+  margin-right: 32px;
+  height: 192px;
+}
+.about__part-title {
+  margin-bottom: 20px;
+}
+.about__frontend, .about__backend {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+}
+.about__frontend:hover, .about__backend:hover {
+  background-color: #34373b;
+}
+.about__frontend img, .about__backend img {
+  margin-right: 12px;
+}
+.about__part-selected {
+  background-color: #43464B;
+}
+.about__part-selected:hover {
+  background-color: #43464B;
+}
+.about__frontend {
+  margin-bottom: 12px;
+}
+.about__block {
+  display: flex;
+}
+.about__tech-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 464px;
+  transition: height 0.8s;
+}
+.about__tech {
+  background: #292B2E;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  top: 0;
+  position: absolute;
+  transition: all 0.8s;
+}
+.about__tech div:last-child {
+  margin-bottom: 0;
+}
+.about__tech-empty {
+  margin-bottom: 20px;
+}
+.about__tech-block {
+  margin-bottom: 20px;
+}
+.about__tech-block-title {
+  margin-bottom: 12px;
+}
+.about__tech-item {
+  border-radius: 12px;
+  background-color: #43464B;
+  padding: 12px;
+  display: flex;
+  margin-bottom: 8px;
+}
+.about__tech-item img {
+  margin-right: 10px;
+}
+.about__tech-item:last-child {
+  margin-bottom: 0;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-tech {
+  top: 0 !important;
+  opacity: 1;
+  transition: all 0.8s;
+}
+
+/*# sourceMappingURL=style.css.map */
