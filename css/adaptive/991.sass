@@ -8,8 +8,18 @@ $title-margin-1199: 66px
     .chat-icon
         bottom: 20px
         right: 20px
-        width: 42px
-        height: 42px
+        //width: 42px
+        //height: 42px
+
+    .chat
+        height: calc(100% + 70px) //410px
+        max-height: 562px
+
+        &__box-wrapper
+            height: calc(100% - 70px - 20px - 66px)
+
+        &__box
+            height: calc(100% - 20px)  //240px
 
     .header
 
@@ -19,6 +29,7 @@ $title-margin-1199: 66px
         &__menu-wrapper
             padding-top: 20px
             padding-bottom: 20px
+            background: rgba(26, 27, 31, 0.9)
 
         &__logo
             font-size: 20px

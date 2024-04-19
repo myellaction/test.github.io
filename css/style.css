@@ -1473,12 +1473,21 @@ h6 {
   .chat-icon {
     bottom: 20px;
     right: 20px;
-    width: 42px;
-    height: 42px;
+  }
+  .chat {
+    height: calc(100% + 70px);
+    max-height: 562px;
+  }
+  .chat__box-wrapper {
+    height: calc(100% - 70px - 20px - 66px);
+  }
+  .chat__box {
+    height: calc(100% - 20px);
   }
   .header__menu-wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
+    background: rgba(26, 27, 31, 0.9);
   }
   .header__logo {
     font-size: 20px;

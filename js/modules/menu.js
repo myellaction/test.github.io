@@ -1,4 +1,5 @@
 import {chat, chatIcon} from "./chat";
+import {clickAction, scrollAction, isMobile} from './actions';
 
 const lang = document.querySelector('.header__lang-box');
 const langHidden = document.querySelector('.header__lang-second');
@@ -19,7 +20,7 @@ const rotateArrow = () => {
     }
 }
 
-lang.addEventListener('click', (e)=>{
+lang.addEventListener(clickAction, (e)=>{
     rotateArrow();
     langHidden.classList.toggle('show');
     e.stopPropagation();
@@ -27,7 +28,7 @@ lang.addEventListener('click', (e)=>{
 
 if(mobileNavs[0].style.display !== 'none'){
     mobileNavs.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener(clickAction, () => {
             mobileNavs.forEach(btn => {
                 btn.classList.toggle('open');
                 if(btn.classList.contains('header__nav-mobile-block')){
@@ -42,11 +43,15 @@ if(mobileNavs[0].style.display !== 'none'){
     });
 }
 
-window.addEventListener('scroll', () => {
+window.addEventListener(scrollAction, () => {
     if(window.scrollY < 1) {
-        menu.classList.add('not-bg');
+        if(!isMobile) {
+            menu.classList.add('not-bg');
+        }
     } else if (window.scrollY > 40) {
-        menu.classList.remove('not-bg');
+        if(!isMobile) {
+            menu.classList.remove('not-bg');
+        }
         if (topMargin > window.scrollY) {
             menu.classList.remove('hide-menu');
             menu.classList.add('show-menu');
@@ -55,16 +60,19 @@ window.addEventListener('scroll', () => {
         }
     }
     topMargin = window.scrollY;
-})
+});
 
 
 //Window click
-window.addEventListener('click', (e) => {
+window.addEventListener(clickAction, (e) => {
     if (langHidden.classList.contains('show')){
         rotateArrow();
         langHidden.classList.remove('show');
     }
     if(chat.classList.contains('show-chat')){
+        if(isMobile){
+            document.querySelector('body').style.overflow = 'auto';
+        }
         chatIcon.classList.remove('hide-chat-icon');
         chat.classList.remove('show-chat');
     }

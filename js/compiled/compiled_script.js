@@ -1,6 +1,25 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./modules/actions.js":
+/*!****************************!*\
+  !*** ./modules/actions.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clickAction: () => (/* binding */ clickAction),
+/* harmony export */   isMobile: () => (/* binding */ isMobile),
+/* harmony export */   scrollAction: () => (/* binding */ scrollAction)
+/* harmony export */ });
+const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
+const clickAction = isMobile ? 'touchend' : 'click';
+const scrollAction = isMobile ? 'touchmove' : 'scroll';
+
+/***/ }),
+
 /***/ "./modules/chat.js":
 /*!*************************!*\
   !*** ./modules/chat.js ***!
@@ -14,6 +33,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   chatIcon: () => (/* binding */ chatIcon)
 /* harmony export */ });
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/index.mjs");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./modules/actions.js");
+
 
 
 //Scroll
@@ -27,7 +48,7 @@ const chatPanel = document.querySelector('.chat__panel');
 const mesBox = document.querySelector('.chat__box');
 const mesScrollBox = mesBar.getScrollElement();
 mesScrollBox.scrollTo({
-  top: mesBox.scrollHeight,
+  top: mesScrollBox.scrollHeight,
   behavior: "smooth"
 });
 if (window.navigator.vendor !== '') {
@@ -48,6 +69,7 @@ function autoResize() {
     });
   }, 1);
 }
+const maxMesBoxHeight = Number(getComputedStyle(mesBox).height.slice(0, -2));
 chatInput.addEventListener('input', () => {
   chatInput.style.height = minChatInputHeight + 'px';
   const chatInputHeight = Math.min(chatInput.scrollHeight, maxChatInputHeight);
@@ -62,10 +84,10 @@ chatInput.addEventListener('input', () => {
       top: chatInput.scrollHeight
     });
     const newChatPanelHeight = chatPanel.clientHeight;
-    const currentHeight = 380 - (newChatPanelHeight - 66);
+    const currentHeight = maxMesBoxHeight - (newChatPanelHeight - 66);
     mesBox.style.height = currentHeight + 'px';
     mesScrollBox.scrollTo({
-      top: mesBox.scrollHeight,
+      top: mesScrollBox.scrollHeight,
       behavior: 'smooth'
     });
     prevChatInputHeight = chatInputHeight;
@@ -76,14 +98,20 @@ chatInput.addEventListener('input', () => {
 const chat = document.querySelector('.chat');
 const chatIcon = document.querySelector('.chat-icon');
 const chatClose = document.querySelector('.chat__close');
-chatIcon.addEventListener('click', e => {
+chatIcon.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
+  if (_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
+    document.querySelector('body').style.overflow = 'hidden';
+  }
   e.stopPropagation();
   chatIcon.classList.add('hide-chat-icon');
   chat.classList.add('show-chat');
 });
-chat.addEventListener('click', e => e.stopPropagation());
-chatClose.addEventListener('click', e => {
+chat.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => e.stopPropagation());
+chatClose.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
   e.stopPropagation();
+  if (_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
+    document.querySelector('body').style.overflow = 'auto';
+  }
   chatIcon.classList.remove('hide-chat-icon');
   chat.classList.remove('show-chat');
 });
@@ -99,6 +127,8 @@ chatClose.addEventListener('click', e => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _chat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chat */ "./modules/chat.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./modules/actions.js");
+
 
 const lang = document.querySelector('.header__lang-box');
 const langHidden = document.querySelector('.header__lang-second');
@@ -115,14 +145,14 @@ const rotateArrow = () => {
     arrows.forEach(item => item.style.transform = 'rotate(180deg)');
   }
 };
-lang.addEventListener('click', e => {
+lang.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
   rotateArrow();
   langHidden.classList.toggle('show');
   e.stopPropagation();
 });
 if (mobileNavs[0].style.display !== 'none') {
   mobileNavs.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, () => {
       mobileNavs.forEach(btn => {
         btn.classList.toggle('open');
         if (btn.classList.contains('header__nav-mobile-block')) {
@@ -136,11 +166,15 @@ if (mobileNavs[0].style.display !== 'none') {
     });
   });
 }
-window.addEventListener('scroll', () => {
+window.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.scrollAction, () => {
   if (window.scrollY < 1) {
-    menu.classList.add('not-bg');
+    if (!_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
+      menu.classList.add('not-bg');
+    }
   } else if (window.scrollY > 40) {
-    menu.classList.remove('not-bg');
+    if (!_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
+      menu.classList.remove('not-bg');
+    }
     if (topMargin > window.scrollY) {
       menu.classList.remove('hide-menu');
       menu.classList.add('show-menu');
@@ -152,12 +186,15 @@ window.addEventListener('scroll', () => {
 });
 
 //Window click
-window.addEventListener('click', e => {
+window.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
   if (langHidden.classList.contains('show')) {
     rotateArrow();
     langHidden.classList.remove('show');
   }
   if (_chat__WEBPACK_IMPORTED_MODULE_0__.chat.classList.contains('show-chat')) {
+    if (_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
+      document.querySelector('body').style.overflow = 'auto';
+    }
     _chat__WEBPACK_IMPORTED_MODULE_0__.chatIcon.classList.remove('hide-chat-icon');
     _chat__WEBPACK_IMPORTED_MODULE_0__.chat.classList.remove('show-chat');
   }

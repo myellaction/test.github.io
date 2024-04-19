@@ -1,4 +1,5 @@
 import SimpleBar from 'simplebar';
+import {clickAction, isMobile} from './actions';
 
 //Scroll
 const mesBar = new SimpleBar(document.getElementById('mes-box'), {
@@ -12,7 +13,7 @@ const mesBox = document.querySelector('.chat__box');
 const mesScrollBox = mesBar.getScrollElement();
 
 mesScrollBox.scrollTo({
-    top: mesBox.scrollHeight,
+    top: mesScrollBox.scrollHeight,
     behavior: "smooth"
 });
 
@@ -36,6 +37,7 @@ function autoResize() {
         });
     }, 1);
 }
+const maxMesBoxHeight = Number(getComputedStyle(mesBox).height.slice(0, -2));
 
 chatInput.addEventListener('input', () => {
     chatInput.style.height = minChatInputHeight + 'px';
@@ -51,10 +53,10 @@ chatInput.addEventListener('input', () => {
             top: chatInput.scrollHeight
         });
         const newChatPanelHeight = chatPanel.clientHeight;
-        const currentHeight = 380 - (newChatPanelHeight - 66);
+        const currentHeight = maxMesBoxHeight - (newChatPanelHeight - 66);
         mesBox.style.height = currentHeight + 'px';
         mesScrollBox.scrollTo({
-            top: mesBox.scrollHeight,
+            top: mesScrollBox.scrollHeight,
             behavior: 'smooth'
         });
         prevChatInputHeight = chatInputHeight;
@@ -67,16 +69,23 @@ chatInput.addEventListener('input', () => {
 export const chat = document.querySelector('.chat');
 export const chatIcon = document.querySelector('.chat-icon');
 const chatClose = document.querySelector('.chat__close');
-chatIcon.addEventListener('click', (e) => {
+chatIcon.addEventListener(clickAction, (e) => {
+    if(isMobile){
+        document.querySelector('body').style.overflow = 'hidden';
+    }
     e.stopPropagation();
     chatIcon.classList.add('hide-chat-icon');
     chat.classList.add('show-chat');
 });
 
-chat.addEventListener('click', (e) => e.stopPropagation());
+chat.addEventListener(clickAction, (e) => e.stopPropagation());
 
-chatClose.addEventListener('click', (e) => {
+chatClose.addEventListener(clickAction, (e) => {
     e.stopPropagation();
+    if(isMobile){
+        document.querySelector('body').style.overflow = 'auto';
+    }
     chatIcon.classList.remove('hide-chat-icon');
     chat.classList.remove('show-chat');
 })
+
