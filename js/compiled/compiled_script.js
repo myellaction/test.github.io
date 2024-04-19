@@ -176,10 +176,14 @@ window.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.scrollAction, () =
       menu.classList.remove('not-bg');
     }
     if (topMargin > window.scrollY) {
-      menu.classList.remove('hide-menu');
-      menu.classList.add('show-menu');
+      if (menu.classList.contains('hide-menu')) {
+        menu.classList.remove('hide-menu');
+        menu.classList.add('show-menu');
+      }
     } else {
-      menu.classList.add('hide-menu');
+      if (!menu.classList.contains('hide-menu')) {
+        menu.classList.add('hide-menu');
+      }
     }
   }
   topMargin = window.scrollY;

@@ -43,20 +43,25 @@ if(mobileNavs[0].style.display !== 'none'){
     });
 }
 
+
 window.addEventListener(scrollAction, () => {
-    if(window.scrollY < 1) {
-        if(!isMobile) {
+    if (window.scrollY < 1) {
+        if (!isMobile) {
             menu.classList.add('not-bg');
         }
     } else if (window.scrollY > 40) {
-        if(!isMobile) {
+        if (!isMobile) {
             menu.classList.remove('not-bg');
         }
         if (topMargin > window.scrollY) {
-            menu.classList.remove('hide-menu');
-            menu.classList.add('show-menu');
+            if(menu.classList.contains('hide-menu')){
+                menu.classList.remove('hide-menu');
+                menu.classList.add('show-menu');
+            }
         } else {
-            menu.classList.add('hide-menu');
+            if(!menu.classList.contains('hide-menu')){
+                menu.classList.add('hide-menu');
+            }
         }
     }
     topMargin = window.scrollY;
