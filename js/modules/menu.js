@@ -53,6 +53,10 @@ window.addEventListener(scrollAction, () => {
         if (!isMobile) {
             menu.classList.remove('not-bg');
         }
+        if (getComputedStyle(menu).position !== 'fixed') {
+            menu.style.transform = 'translateY(-100%)';
+            menu.style.position = 'fixed';
+        }
         if (topMargin > window.scrollY) {
             if(menu.classList.contains('hide-menu')){
                 menu.classList.remove('hide-menu');

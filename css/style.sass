@@ -287,48 +287,23 @@ h6
 
 .show-menu
     background: rgba(26, 27, 31, 0.9)
-    animation: fadeIn
-    animation-duration: 0.5s
-    animation-delay: 0.2s
-    animation-fill-mode: forwards
     position: fixed
     z-index: 10
-    opacity: 0
-
-@keyframes fadeIn
-    0%
-        opacity: 0
-        transform: translateY(-50px)
-        //top: -50px
-
-    10%
-        opacity: 0
-
-    100%
-        opacity: 1
-        transform: translateY(0)
-        //top: 0
+    opacity: 1
+    transform: translateY(0) !important
+    visibility: visible
+    transition: all 0.5s
 
 .hide-menu
-    animation: fadeOut 0.5s
-    animation-fill-mode: forwards
+    transform: translateY(-100%) !important
+    opacity: 0
+    visibility: hidden
+    transition: all 0.5s
 
     .header__lang-second
         visibility: collapse !important
+        transition: all 0.5s
 
-@keyframes fadeOut
-    0%
-        opacity: 1
-        transform: translateY(0)
-
-    80%
-        opacity: 0
-        transform: translateY(-50px)
-
-    100%
-        transform: translateY(0)
-        opacity: 0
-        visibility: collapse
 
 .not-bg
     background-color: rgba(41, 43, 46, 0)
