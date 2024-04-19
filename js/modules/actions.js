@@ -2,4 +2,5 @@ export const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Wind
     .test(navigator.userAgent);
 
 export const clickAction = isMobile ? 'touchend' : 'click';
-export const scrollAction = isMobile ? 'touchmove' : 'scroll';
+export const scrollAction = 'scroll'; //isMobile ? 'touchmove' : 'scroll';
+

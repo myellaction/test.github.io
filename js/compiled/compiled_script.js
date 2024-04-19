@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
 const clickAction = isMobile ? 'touchend' : 'click';
-const scrollAction = isMobile ? 'touchmove' : 'scroll';
+const scrollAction = 'scroll'; //isMobile ? 'touchmove' : 'scroll';
 
 /***/ }),
 
