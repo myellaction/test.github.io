@@ -664,10 +664,13 @@ h6 {
 
 .show-menu {
   background: rgba(26, 27, 31, 0.9);
-  animation: fadeIn 0.5s;
+  animation: fadeIn;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
   animation-fill-mode: forwards;
   position: fixed;
   z-index: 10;
+  opacity: 0;
 }
 
 @keyframes fadeIn {
