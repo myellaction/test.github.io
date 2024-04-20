@@ -1,7 +1,7 @@
 $section-margin-1199: 84px
 $title-margin-1199: 66px
 
-@media(max-width: 991px)
+@media(max-width: 992px)
     .wrapper
         width: 700px
 
@@ -32,7 +32,7 @@ $title-margin-1199: 66px
         &__menu-wrapper
             padding-top: 20px
             padding-bottom: 20px
-            background: rgba(26, 27, 31, 0.9)
+            background: rgba(26, 27, 31, 1)
 
         &__logo
             font-size: 20px
@@ -137,11 +137,11 @@ $title-margin-1199: 66px
             top: 20px
             right: calc(-1 *(100% - 700px) / 2 - 10px)
             z-index: 13
-            transition: right 0.3s
+            transition: right 0.4s
 
         &__nav-mobile-block-show
             right: calc((100% - 700px) / 2)
-            transition: right 0.3s
+            transition: right 0.4s
 
         &__mobile-wrapper
             z-index: 12
@@ -170,7 +170,6 @@ $title-margin-1199: 66px
 
             &:last-child
                 margin-bottom: 0
-
 
     .black
         height: 200vh
@@ -215,13 +214,18 @@ $title-margin-1199: 66px
         &__block
             height: 560px
 
+        &__img
+            width: 40%
+            height: 100%
+
             img
                 border-top-left-radius: 32px
                 border-bottom-left-radius: 32px
 
         &__list
-            padding: 24px 0
-            padding-left: 20px
+            width: 60%
+            padding-top: 26px
+            padding-bottom: 26px
 
         &__num
             margin-right: 20px
@@ -260,4 +264,6 @@ $title-margin-1199: 66px
 
         &__form-block
             width: 100%
+
+
 

@@ -14,7 +14,7 @@ img
     display: block //чтоб блок, в котором картинки не увеличивался
 
 body
-    font-family: "Droid Sans"
+    font-family: "Droid Sans", SansSerif
     font-size: 20px
     color: rgba(255, 255, 255, 0.8)
     background-color: $body-bg
@@ -62,7 +62,7 @@ button
     margin-bottom: 12px
 
 .small
-    font-family: "Droid Sans"
+    font-family: "Droid Sans", SansSerif
     font-size: 16px
     line-height: 150%
 
@@ -75,24 +75,24 @@ button
         transition: color 0.3s
 
 .light
-    font-family: "Droid Sans"
+    font-family: "Droid Sans", SansSerif
     font-size: 12px
     line-height: 130%
 
 .body-bold
-    font-family: "Droid Sans"
+    font-family: "Droid Sans", SansSerif
     font-size: 20px
     font-weight: bold
     color: white
 
 h1
-    font-family: "Rubik"
+    font-family: "Rubik", SansSerif
     font-size: 76px
     line-height: 100%
     color: white
 
 h2
-    font-family: "Rubik"
+    font-family: "Rubik", SansSerif
     font-size: 62px
     line-height: 110%
     color: white
@@ -100,23 +100,23 @@ h2
     margin-bottom: $title-margin
 
 h3
-    font-family: "Rubik"
+    font-family: "Rubik", SansSerif
     font-size: 48px
     color: white
 
 h4
-    font-family: "Rubik"
+    font-family: "Rubik", SansSerif
     font-size: 40px
     color: white
 
 h5
-    font-family: "Rubik"
+    font-family: "Rubik", SansSerif
     font-size: 30px
     line-height: 110%
     color: white
 
 h6
-    font-family: "Rubik"
+    font-family: "Rubik", SansSerif
     font-size: 24px
     line-height: 100%
     color: white
@@ -509,8 +509,8 @@ h6
 
     &__minus
         position: absolute
-        top: 32px
-        right: 32px
+        top: 0
+        left: 0
         opacity: 0
         visibility: hidden
         transition: all 0.3s
@@ -521,6 +521,13 @@ h6
         visibility: visible
         transition: all 0.3s
         transform: rotate(0deg)
+
+    &__plus-wrapper
+        display: flex
+        align-items: center
+
+    &__plus-block
+        position: relative
 
     &__plus
         transition: all 0.3s
@@ -767,8 +774,27 @@ h6
         height: 24px
         overflow-y: hidden
         overscroll-behavior-y: none
-        scrollbar-color: #458485 rgba(69, 132, 133, 0.4)
+        //scrollbar-color: #458485 rgba(69, 132, 133, 0.4)
         outline: none
+
+    &__area::-webkit-scrollbar
+        width: 4px
+        height: 4px
+
+    &__area::-webkit-scrollbar-track
+        border-radius: 4px
+        background: rgba(69, 132, 133, 0.4)
+
+    &__area::-webkit-scrollbar-thumb
+        border-radius: 4px
+        background: #458485
+        cursor: default
+
+    &__area::-webkit-scrollbar-thumb:hover
+        background: #458485
+
+    &__area::-webkit-scrollbar-thumb:active
+        background: #458485
 
     &__input:-webkit-autofill,
     &__input:-webkit-autofill:hover,
@@ -794,13 +820,13 @@ h6
     overscroll-behavior-y: none
 
 .simplebar-track
-    width: 8px !important
-    border-radius: 8px !important
+    width: 4px !important
+    border-radius: 4px !important
     background-color: rgba(69, 132, 133, 0.4)
 
 .simplebar-scrollbar
-    border-radius: 8px
-    width: 8px
+    border-radius: 4px
+    width: 4px
     background-color: #458485
 
     &::before
@@ -810,11 +836,6 @@ h6
         top: 0
         bottom: 0
         transition: opacity 0.2s 1s linear
-
-.simplebar-scrollbar.simplebar-visible:before
-    opacity: 1
-    transition-delay: 0s
-    transition-duration: 0s
 
 //Background animation
 .area
@@ -949,6 +970,8 @@ h6
         background: #52a2a4
 
 //Media
-@import 'adaptive/1199'
-@import 'adaptive/991'
+@import 'adaptive/1200'
+@import 'adaptive/992'
+@import 'adaptive/768'
+
 

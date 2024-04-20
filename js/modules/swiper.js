@@ -1,8 +1,8 @@
 const maxWidth = window.innerWidth;
 const swiper = new Swiper(".tech__swiper", {
-    slidesPerView: 4,
+    slidesPerView: maxWidth > 768 ? 4 : 3,
     loop: true,
-    spaceBetween: maxWidth > 768 ? 100 : 70,
+    spaceBetween: maxWidth > 992 ? 100 : 70,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,

@@ -27,19 +27,45 @@ lang.addEventListener(clickAction, (e)=>{
 });
 
 if(mobileNavs[0].style.display !== 'none'){
+    let bgAnimation;
     mobileNavs.forEach(btn => {
         btn.addEventListener(clickAction, () => {
+            if(!bgAnimation){
+                bgAnimation = true;
+                mobileNavs.forEach(btn => {
+                    btn.classList.toggle('open');
+                    if(btn.classList.contains('header__nav-mobile-block')){
+                        btn.classList.toggle('header__nav-mobile-block-show');
+                    }
+                });
+                setTimeout(()=>{
+                    mobileMenu.classList.toggle('header__mobile-wrapper-show');
+                }, 50);
+                blackBg.classList.toggle('black-show');
+                setTimeout(()=>{
+                    bgAnimation = false;
+                }, 500);
+            }
+        });
+    });
+
+    blackBg.addEventListener(clickAction, () => {
+        if(!bgAnimation) {
+            bgAnimation = true
             mobileNavs.forEach(btn => {
                 btn.classList.toggle('open');
-                if(btn.classList.contains('header__nav-mobile-block')){
+                if (btn.classList.contains('header__nav-mobile-block')) {
                     btn.classList.toggle('header__nav-mobile-block-show');
                 }
             });
-            setTimeout(()=>{
+            setTimeout(() => {
                 mobileMenu.classList.toggle('header__mobile-wrapper-show');
             }, 50);
             blackBg.classList.toggle('black-show');
-        });
+            setTimeout(()=>{
+                bgAnimation = false;
+            }, 500);
+        }
     });
 }
 
@@ -86,3 +112,4 @@ window.addEventListener(clickAction, (e) => {
         chat.classList.remove('show-chat');
     }
 });
+

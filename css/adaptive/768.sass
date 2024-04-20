@@ -1,0 +1,191 @@
+$section-margin-767: 60px
+$title-margin-767: 40px
+
+@media(max-width: 768px)
+    .wrapper
+        width: 536px
+
+    body
+        font-size: 16px
+        overflow-x: hidden
+
+    h1
+        font-size: 36px
+
+    h2
+        font-size: 30px
+        margin-bottom: $title-margin-767
+
+    .chat-icon
+        height: 50px
+        width: 50px
+        bottom: 20px
+        right: 20px
+
+    .header
+        height: 500px
+        margin-bottom: $section-margin-767
+
+        &__title
+            margin-bottom: 12px
+
+        &__description
+            margin-bottom: 20px
+
+        &__wrapper
+            padding-top: 160px
+
+        &__content
+            width: 500px
+
+        &__menu-wrapper
+            padding-top: 14px
+            padding-bottom: 14px
+
+        &__nav-mobile-block
+            top: 14px
+            right: calc(-1 *(100% - 536px) / 2 - 20px)
+
+        &__nav-mobile-block-show
+            right: calc((100% - 536px) / 2)
+
+        &__mobile-wrapper
+            width: 60%
+            right: -60%
+
+        &__mobile-wrapper-show
+            right: 0
+            transition: right 0.5s
+
+        &__btn
+            font-size: 16px
+            padding: 12px 20px
+
+    .aims
+        margin-bottom: $section-margin-767
+
+        &__item
+            width: 246px
+            padding: 32px 20px
+
+            &:nth-child(-n + 2)
+                margin-bottom: 32px
+
+            &:nth-child(odd)
+                margin-right: 32px
+
+            img
+                height: 116px
+                width: 116px
+                object-fit: cover
+
+    .steps
+        margin-bottom: $section-margin-767
+
+        &__block
+            height: 556px
+
+        &__img
+            width: 30%
+
+            img
+                border-top-left-radius: 20px
+                border-bottom-left-radius: 20px
+
+        &__item
+            h5
+                font-size: 20px
+
+        &__list
+            width: 70%
+            border-top-right-radius: 20px
+            border-bottom-right-radius: 20px
+            padding: 34px
+
+        &__num
+            height: 60px
+            width: 60px
+
+        &__union
+            width: 60px
+
+    .services
+        margin-bottom: $section-margin-767
+
+        &__item
+            width: 254px
+            padding: 32px 24px
+            height: 318px
+
+        &__title
+            font-size: 20px
+            margin-bottom: 12px
+
+        &__icon
+            margin-bottom: 20px
+
+            img
+                height: 54px
+                width: 54px
+
+        &__detail
+            top: auto
+            bottom: 32px
+
+        &__detail:hover &__detail-icon
+            transition: all 0.5s
+            transform: translateX(110px)
+
+        &__detail-icon
+            img
+                height: 45px
+                width: 45px
+
+        &__show
+            font-size: 16px
+
+    .adv
+        margin-bottom: $section-margin-767
+
+        &__block
+            margin-top: -30px
+
+            img
+                height: 400px
+                width: 400px
+
+        &__description
+            width: 100%
+            padding: 20px
+
+            h4
+                font-size: 20px
+                margin-bottom: 12px
+
+    .questions
+        margin-bottom: $section-margin-767
+
+        &__item
+            border-radius: 20px
+            margin-bottom: 20px
+
+        &__item-header
+            padding: 20px
+
+            h5
+                font-size: 20px
+
+        &__plus, &__minus
+            height: 24px
+            width: 24px
+            object-fit: cover
+
+        &__answer
+            padding: 0 20px
+
+        &__answer-wrapper
+            padding: 20px 0
+
+    .tech
+        margin-bottom: $section-margin-767
+
