@@ -86,10 +86,10 @@ chatInput.addEventListener('input', () => {
     const newChatPanelHeight = chatPanel.clientHeight;
     const currentHeight = maxMesBoxHeight - (newChatPanelHeight - 66);
     mesBox.style.height = currentHeight + 'px';
-    mesScrollBox.scrollTo({
-      top: mesScrollBox.scrollHeight,
-      behavior: 'smooth'
-    });
+    /*mesScrollBox.scrollTo({
+        top: mesScrollBox.scrollHeight,
+        behavior: 'smooth'
+    });*/
     prevChatInputHeight = chatInputHeight;
   }
 });
@@ -102,6 +102,10 @@ chatIcon.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e =
   if (_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
     document.querySelector('body').style.overflow = 'hidden';
   }
+  mesScrollBox.scrollTo({
+    top: mesScrollBox.scrollHeight,
+    behavior: "smooth"
+  });
   e.stopPropagation();
   chatIcon.classList.add('hide-chat-icon');
   chat.classList.add('show-chat');
@@ -157,9 +161,17 @@ if (mobileNavs[0].style.display !== 'none') {
       if (!bgAnimation) {
         bgAnimation = true;
         mobileNavs.forEach(btn => {
-          btn.classList.toggle('open');
           if (btn.classList.contains('header__nav-mobile-block')) {
             btn.classList.toggle('header__nav-mobile-block-show');
+            if (btn.classList.contains('open')) {
+              setTimeout(() => {
+                btn.classList.remove('open');
+              }, 400);
+            } else {
+              btn.classList.add('open');
+            }
+          } else {
+            btn.classList.toggle('open');
           }
         });
         setTimeout(() => {
@@ -286,9 +298,9 @@ questions.forEach((item, index) => {
 
 const maxWidth = window.innerWidth;
 const swiper = new Swiper(".tech__swiper", {
-  slidesPerView: maxWidth > 768 ? 4 : 3,
+  slidesPerView: maxWidth >= 767 ? 4 : 3,
   loop: true,
-  spaceBetween: maxWidth > 992 ? 100 : 70,
+  spaceBetween: maxWidth >= 991 ? 100 : 70,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false

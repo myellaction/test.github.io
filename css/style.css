@@ -1028,6 +1028,13 @@ h6 {
   opacity: 1;
   visibility: visible;
 }
+.chat-icon circle {
+  transition: all 0.3s;
+}
+.chat-icon:hover circle {
+  fill: #737368;
+  transition: all 0.3s;
+}
 
 .hide-chat-icon {
   opacity: 0;
@@ -1335,7 +1342,7 @@ h6 {
     border-radius: 50%;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .wrapper {
     width: 930px;
   }
@@ -1466,7 +1473,7 @@ h6 {
     padding-bottom: 66px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .wrapper {
     width: 700px;
   }
@@ -1706,7 +1713,7 @@ h6 {
     width: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .wrapper {
     width: 536px;
   }

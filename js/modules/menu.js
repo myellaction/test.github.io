@@ -33,9 +33,17 @@ if(mobileNavs[0].style.display !== 'none'){
             if(!bgAnimation){
                 bgAnimation = true;
                 mobileNavs.forEach(btn => {
-                    btn.classList.toggle('open');
-                    if(btn.classList.contains('header__nav-mobile-block')){
+                    if (btn.classList.contains('header__nav-mobile-block')) {
                         btn.classList.toggle('header__nav-mobile-block-show');
+                        if(btn.classList.contains('open')){
+                            setTimeout(()=> {
+                                btn.classList.remove('open')
+                            }, 400);
+                        } else{
+                            btn.classList.add('open');
+                        }
+                    } else {
+                        btn.classList.toggle('open');
                     }
                 });
                 setTimeout(()=>{
