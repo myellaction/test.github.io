@@ -1606,11 +1606,13 @@ h6 {
     top: 0px;
     right: -45%;
     padding: 72px;
-    transition: right 0.5s;
+    transition: right 0s;
+    opacity: 0;
   }
   .header__mobile-wrapper-show {
     right: 0;
     transition: right 0.5s;
+    opacity: 1;
   }
   .header__mobile-menu {
     display: block;
