@@ -1052,7 +1052,7 @@ h6 {
   background-color: #1B1A29;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
-  border: 3px solid #3b3e42;
+  border: 3px solid #32303d;
   z-index: 11;
   height: 562px;
 }
@@ -1135,7 +1135,7 @@ h6 {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  background: #3b3e42;
+  background: #32303d;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1158,7 +1158,7 @@ h6 {
   min-height: 42px;
 }
 .chat__area {
-  background: #3b3e42;
+  background: #32303d;
   border: none;
   width: 372px;
   min-height: 24px;
@@ -1188,13 +1188,16 @@ h6 {
 }
 .chat__input:-webkit-autofill, .chat__input:-webkit-autofill:hover, .chat__input:-webkit-autofill:focus {
   -webkit-text-fill-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 0px 1000px #3b3e42 inset;
-  box-shadow: 0 0 0px 1000px #3b3e42 inset;
+  -webkit-box-shadow: 0 0 0px 1000px #32303d inset;
+  box-shadow: 0 0 0px 1000px #32303d inset;
   transition: background-color 5000s ease-in-out 0s;
   caret-color: rgba(255, 255, 255, 0.8);
 }
 .chat__close {
   cursor: pointer;
+}
+.chat__button {
+  padding: 0;
 }
 
 .show-chat {

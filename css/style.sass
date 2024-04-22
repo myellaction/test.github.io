@@ -657,6 +657,8 @@ h6
     visibility: hidden
     transition: all 0.3s
 
+$chat-color: #32303d
+
 .chat
     opacity: 0
     visibility: hidden
@@ -666,7 +668,7 @@ h6
     background-color: #1B1A29
     border-top-left-radius: 32px
     border-top-right-radius: 32px
-    border: 3px solid #3b3e42
+    border: 3px solid $chat-color
     z-index: 11
     height: 562px
     //transition: opacity 0.1s, visibility 0.1s, bottom 0.2s
@@ -751,7 +753,7 @@ h6
         display: flex
         align-items: flex-end
         justify-content: space-between
-        background: #3b3e42
+        background: $chat-color
         position: absolute
         bottom: 0
         width: 100%
@@ -777,7 +779,7 @@ h6
         //border: 1px solid red //если нужна границы
 
     &__area
-        background: #3b3e42
+        background: $chat-color
         border: none
         width: 372px
         min-height: 24px
@@ -810,13 +812,16 @@ h6
     &__input:-webkit-autofill:hover,
     &__input:-webkit-autofill:focus
         -webkit-text-fill-color: rgba(255, 255, 255, 0.8)
-        -webkit-box-shadow: 0 0 0px 1000px #3b3e42 inset
-        box-shadow: 0 0 0px 1000px #3b3e42 inset
+        -webkit-box-shadow: 0 0 0px 1000px $chat-color inset
+        box-shadow: 0 0 0px 1000px $chat-color inset
         transition: background-color 5000s ease-in-out 0s
         caret-color: rgba(255, 255, 255, 0.8)
 
     &__close
         cursor: pointer
+
+    &__button
+        padding: 0
 
 .show-chat
     opacity: 1
