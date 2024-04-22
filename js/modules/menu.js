@@ -12,6 +12,9 @@ const blackBg = document.querySelector('.black');
 
 let topMargin = 0;
 
+const burgerHidden = document.querySelector('.header__nav-mobile.header__nav-mobile-block');
+const burgerVisible = document.querySelector('.header__nav-mobile:not(.header__nav-mobile-block)');
+
 const rotateArrow = () => {
     if(langHidden.classList.contains('show')){
         arrows.forEach(item=>item.style.transform = 'rotate(0deg)');
@@ -27,26 +30,29 @@ lang.addEventListener(clickAction, (e)=>{
 });
 
 if(mobileNavs[0].style.display !== 'none'){
-    mobileNavs.forEach(btn => {
-        btn.addEventListener(clickAction, () => {
-            mobileNavs.forEach(btn => {
-                btn.classList.toggle('open');
-                if (btn.classList.contains('header__nav-mobile-block')) {
-                    btn.classList.toggle('header__nav-mobile-block-show');
-                }
-            });
-            mobileMenu.classList.toggle('header__mobile-wrapper-show');
-            blackBg.classList.toggle('black-show');
+    burgerVisible.addEventListener(clickAction, () => {
+        mobileNavs.forEach(item => {
+            item.classList.add('open');
         });
+        burgerHidden.classList.add('header__nav-mobile-block-show');
+        mobileMenu.classList.add('header__mobile-wrapper-show');
+        blackBg.classList.add('black-show');
+    });
+
+    burgerHidden.addEventListener(clickAction, () => {
+        mobileNavs.forEach(item => {
+            item.classList.remove('open');
+        });
+        burgerHidden.classList.remove('header__nav-mobile-block-show');
+        mobileMenu.classList.remove('header__mobile-wrapper-show');
+        blackBg.classList.remove('black-show');
     });
 
     blackBg.addEventListener(clickAction, () => {
-        mobileNavs.forEach(btn => {
-            btn.classList.remove('open');
-            if (btn.classList.contains('header__nav-mobile-block')) {
-                btn.classList.remove('header__nav-mobile-block-show');
-            }
+        mobileNavs.forEach(item => {
+            item.classList.remove('open');
         });
+        burgerHidden.classList.remove('header__nav-mobile-block-show');
         mobileMenu.classList.remove('header__mobile-wrapper-show');
         blackBg.classList.remove('black-show');
     });
