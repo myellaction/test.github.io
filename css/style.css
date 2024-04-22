@@ -1946,6 +1946,29 @@ h6 {
   .footer__line {
     margin-bottom: 20px;
   }
+  .chat__header {
+    padding: 0 32px;
+  }
+  .chat__box {
+    padding-left: 32px;
+    padding-right: 28px;
+  }
+  .chat__box-wrapper {
+    padding-right: 4px;
+    width: 400px;
+  }
+  .chat__admin-content, .chat__user-content {
+    max-width: 230px;
+  }
+  .chat__user-time {
+    margin-right: 0;
+  }
+  .chat__panel {
+    padding-left: 32px;
+  }
+  .chat__area {
+    width: 230px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
