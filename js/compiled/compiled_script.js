@@ -46,6 +46,7 @@ const mesBar = new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](document.ge
 const chatInput = document.querySelector('.chat__area');
 const chatPanel = document.querySelector('.chat__panel');
 const mesBox = document.querySelector('.chat__box');
+const mesBoxWrapper = document.querySelector('.chat__box-wrapper');
 const mesScrollBox = mesBar.getScrollElement();
 mesScrollBox.scrollTo({
   top: mesScrollBox.scrollHeight,
@@ -69,7 +70,7 @@ function autoResize() {
     });
   }, 1);
 }
-const maxMesBoxHeight = Number(getComputedStyle(mesBox).height.slice(0, -2));
+let maxMesBoxHeight = Number(getComputedStyle(mesBox).height.slice(0, -2));
 chatInput.addEventListener('input', () => {
   chatInput.style.height = minChatInputHeight + 'px';
   const chatInputHeight = Math.min(chatInput.scrollHeight, maxChatInputHeight);
@@ -118,6 +119,11 @@ chatClose.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e 
   }
   chatIcon.classList.remove('hide-chat-icon');
   chat.classList.remove('show-chat');
+});
+window.addEventListener('resize', () => {
+  mesBoxWrapper.style.height = 'calc(100% - 70px - 20px - 66px)';
+  mesBox.style.height = 'calc(100% - 20px)';
+  maxMesBoxHeight = Number(getComputedStyle(mesBox).height.slice(0, -2));
 });
 
 /***/ }),
