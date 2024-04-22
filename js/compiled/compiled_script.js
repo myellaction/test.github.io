@@ -86,10 +86,10 @@ chatInput.addEventListener('input', () => {
     const newChatPanelHeight = chatPanel.clientHeight;
     const currentHeight = maxMesBoxHeight - (newChatPanelHeight - 66);
     mesBox.style.height = currentHeight + 'px';
-    /*mesScrollBox.scrollTo({
-        top: mesScrollBox.scrollHeight,
-        behavior: 'smooth'
-    });*/
+    mesScrollBox.scrollTo({
+      top: mesScrollBox.scrollHeight,
+      behavior: 'smooth'
+    });
     prevChatInputHeight = chatInputHeight;
   }
 });
@@ -196,6 +196,8 @@ window.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.scrollAction, () =
     if (!_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
       menu.classList.add('not-bg');
     }
+    menu.classList.remove('hide-menu');
+    menu.classList.add('show-menu');
   } else if (window.scrollY > 40) {
     if (!_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
       menu.classList.remove('not-bg');

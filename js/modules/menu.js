@@ -71,6 +71,8 @@ window.addEventListener(scrollAction, () => {
         if (!isMobile) {
             menu.classList.add('not-bg');
         }
+        menu.classList.remove('hide-menu');
+        menu.classList.add('show-menu');
     } else if (window.scrollY > 40) {
         if (!isMobile) {
             menu.classList.remove('not-bg');

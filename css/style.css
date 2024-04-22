@@ -1728,6 +1728,7 @@ h6 {
   }
   h1 {
     font-size: 36px;
+    line-height: 110%;
   }
   h2 {
     font-size: 30px;
@@ -1930,6 +1931,7 @@ h6 {
   }
   .contact__input {
     margin-bottom: 16px;
+    border-radius: 18px;
   }
   .contact__textarea {
     height: 140px;
@@ -1968,6 +1970,31 @@ h6 {
   }
   .chat__area {
     width: 230px;
+  }
+}
+@media (max-width: 575px) {
+  h1 {
+    line-height: 120%;
+  }
+  .wrapper {
+    width: 280px;
+  }
+  .header__wrapper {
+    padding-top: 120px;
+  }
+  .header__content {
+    width: 280px;
+  }
+  .header__menu-wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .header__nav-mobile-block {
+    top: 12px;
+    right: calc(-1 * (100% - 280px) / 2 - 20px);
+  }
+  .header__nav-mobile-block-show {
+    right: calc((100% - 280px) / 2);
   }
 }
 
