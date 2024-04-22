@@ -1971,8 +1971,23 @@ h6 {
   .chat__panel {
     padding-left: 32px;
   }
+  .chat__area-wrapper {
+    min-height: 30px;
+  }
   .chat__area {
-    width: 230px;
+    width: 260px;
+  }
+  .chat__file {
+    height: 30px;
+  }
+  .chat__file img {
+    width: 18px;
+    height: 16px;
+  }
+  .chat__button img {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
   }
 }
 @media (max-width: 575px) {
