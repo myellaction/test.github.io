@@ -29,7 +29,7 @@ lang.addEventListener(clickAction, (e)=>{
     e.stopPropagation();
 });
 
-if(mobileNavs[0].style.display !== 'none'){
+if(getComputedStyle(mobileNavs[0]).display !== 'none'){
     burgerVisible.addEventListener(clickAction, () => {
         mobileNavs.forEach(item => {
             item.classList.add('open');

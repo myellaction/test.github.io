@@ -162,7 +162,7 @@ lang.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
   langHidden.classList.toggle('show');
   e.stopPropagation();
 });
-if (mobileNavs[0].style.display !== 'none') {
+if (getComputedStyle(mobileNavs[0]).display !== 'none') {
   burgerVisible.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, () => {
     mobileNavs.forEach(item => {
       item.classList.add('open');

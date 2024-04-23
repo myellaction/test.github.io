@@ -22,11 +22,19 @@
                     </div>
                     <nav class="header__nav">
                         <ul class="header__list">
-                            <a href="index.html" class="header__item body-bold"><li>Головна</li></a>
-                            <a href="blog.html" class="header__item body-bold"><li>Блог</li></a>
-                            <a class="header__item body-bold" href="#"><li>Про нас</li></a>
-                            <a class="header__item body-bold header__item_selected" href="#"><li>Контакти</li></a>
+                            <a href="index.html" class="header__item body-bold header__item_selected"><li>Головна</li></a>
+                            <a class="header__item body-bold" href="blog.html"><li>Блог</li></a>
+                            <a class="header__item body-bold" href="about.html"><li>Про нас</li></a>
+                            <a class="header__item body-bold" href="contacts.html"><li>Контакти</li></a>
                         </ul>
+                        <div class="header__nav-mobile">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </nav>
                     <div class="header__lang-box">
                         <div class="header__lang-second">
@@ -89,7 +97,30 @@
     </div>
 </footer>
 
-<img class="chat-icon" src="icons/chat-icon.svg">
+<div class="black"></div>
+
+<div class="header__mobile-wrapper">
+    <div class="header__nav-mobile header__nav-mobile-block">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="header__mobile-menu">
+        <a href="index.html" class="header__mobile-item body-bold">Головна</a>
+        <a href="blog.html" class="header__mobile-item body-bold">Блог</a>
+        <a href="#" class="header__mobile-item body-bold">Про нас</a>
+        <a href="#" class="header__mobile-item body-bold">Контакти</a>
+    </div>
+</div>
+
+
+<svg class="chat-icon" width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="33" cy="33" r="33" fill="#606057"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M32.9998 49.6667C23.7952 49.6667 16.3332 42.2047 16.3332 33C16.3332 23.7953 23.7952 16.3333 32.9998 16.3333C42.2046 16.3333 49.6665 23.7953 49.6665 33C49.6665 35.6662 49.0405 38.186 47.9274 40.4208C47.6316 41.0147 47.5332 41.6935 47.7046 42.3343L48.6973 46.0445C49.1283 47.655 47.6548 49.1283 46.0443 48.6975L42.3342 47.7048C41.6933 47.5333 41.0145 47.6318 40.4206 47.9275C38.1859 49.0407 35.666 49.6667 32.9998 49.6667ZM39.6665 35.0833C40.3569 35.0833 40.9165 35.643 40.9165 36.3333C40.9165 37.0237 40.3569 37.5833 39.6665 37.5833H30.4998C29.8095 37.5833 29.2498 37.0237 29.2498 36.3333C29.2498 35.643 29.8095 35.0833 30.4998 35.0833H39.6665ZM40.9165 30.5C40.9165 29.8097 40.3569 29.25 39.6665 29.25H26.3332C25.6428 29.25 25.0832 29.8097 25.0832 30.5C25.0832 31.1903 25.6428 31.75 26.3332 31.75H39.6665C40.3569 31.75 40.9165 31.1903 40.9165 30.5Z" fill="white"/>
+</svg>
 
 <div class="chat">
     <div class="chat__header">
@@ -119,29 +150,41 @@
                     <div class="chat__admin-icon">
                         <img src="icons/admin.svg">
                     </div>
-                    <div class="chat__admin-content">
-                        Добрий день! Чим можу допомогти?
+                    <div class="chat__mes-wrapper">
+                        <div class="chat__admin-content">
+                            Добрий день! Чим можу допомогти?
+                        </div>
+                        <span>12:15</span>
                     </div>
                 </div>
                 <div class="chat__admin-time">12:15</div>
             </div>
             <div class="chat__admin-mes">
-                <div class="chat__admin-content chat__admin-content_next">
-                    Добрий день! Чим можу допомогти?
+                <div class="chat__mes-wrapper">
+                    <div class="chat__admin-content chat__admin-content_next">
+                        Добрий день! Чим можу допомогти?
+                    </div>
+                    <span>12:15</span>
                 </div>
                 <div class="chat__admin-time">12:15</div>
             </div>
             <div class="chat__user-mes">
                 <div class="chat__user-time">12:15</div>
-                <div class="chat__user-content">
-                    Добрий день! Хочу замовити сайт для інтернет магазину.
-                    Потрібно реалізувати різні штуки. В яку ціну може це коштувату?
+                <div class="chat__mes-wrapper">
+                    <div class="chat__user-content">
+                        Добрий день! Хочу замовити сайт для інтернет магазину.
+                        Потрібно реалізувати різні штуки. В яку ціну може це коштувату?
+                        <span>12:15</span>
+                    </div>
                 </div>
             </div>
             <div class="chat__user-mes chat__user-mes_next">
                 <div class="chat__user-time">12:15</div>
-                <div class="chat__user-content">
-                    Та які строки?
+                <div class="chat__mes-wrapper">
+                    <div class="chat__user-content">
+                        Та які строки?
+                    </div>
+                    <span>12:15</span>
                 </div>
             </div>
             <div class="chat__day">7 квітня</div>
@@ -150,8 +193,11 @@
                     <div class="chat__admin-icon">
                         <img src="icons/admin.svg">
                     </div>
-                    <div class="chat__admin-content">
-                        Добрий день! Чим можу допомогти?
+                    <div class="chat__mes-wrapper">
+                        <div class="chat__admin-content">
+                            Добрий день! Чим можу допомогти?
+                        </div>
+                        <span>12:15</span>
                     </div>
                 </div>
                 <div class="chat__admin-time">12:15</div>
@@ -161,8 +207,11 @@
                     <div class="chat__admin-icon">
                         <img src="icons/admin.svg">
                     </div>
-                    <div class="chat__admin-content">
-                        Добрий день! Чим можу допомогти?
+                    <div class="chat__mes-wrapper">
+                        <div class="chat__admin-content">
+                            Добрий день! Чим можу допомогти?
+                        </div>
+                        <span>12:15</span>
                     </div>
                 </div>
                 <div class="chat__admin-time">12:15</div>
@@ -172,8 +221,11 @@
                     <div class="chat__admin-icon">
                         <img src="icons/admin.svg">
                     </div>
-                    <div class="chat__admin-content">
-                        Добрий день! Чим можу допомогти?
+                    <div class="chat__mes-wrapper">
+                        <div class="chat__admin-content">
+                            Добрий день! Чим можу допомогти?
+                        </div>
+                        <span>12:15</span>
                     </div>
                 </div>
                 <div class="chat__admin-time">12:15</div>
@@ -188,9 +240,9 @@
             </div>
             <div class="chat__area-wrapper">
                 <textarea class="chat__area" name="content"
-                placeholder="Текст повідомлення..."></textarea>
+                          placeholder="Текст повідомлення..."></textarea>
             </div>
-            <button type="submit"><img src="icons/send-mes.svg"></button>
+            <button class="chat__button" type="submit"><img src="icons/send-mes.svg"></button>
         </div>
     </form>
 </div>

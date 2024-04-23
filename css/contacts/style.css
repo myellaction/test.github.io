@@ -7,4 +7,10 @@
   padding-top: 125px;
 }
 
+@media (max-width: 1199px) {
+  .header__wrapper {
+    padding-top: 100px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
