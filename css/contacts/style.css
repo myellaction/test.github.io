@@ -4,12 +4,12 @@
   margin-bottom: 0;
 }
 .header__wrapper {
-  padding-top: 125px;
+  padding-top: 72px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .header__wrapper {
-    padding-top: 100px;
+    padding-top: 60px;
   }
 }
 
