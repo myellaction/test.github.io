@@ -14,10 +14,15 @@ const mesBoxWrapper = document.querySelector('.chat__box-wrapper');
 
 const mesScrollBox = mesBar.getScrollElement();
 
-mesScrollBox.scrollTo({
-    top: mesScrollBox.scrollHeight,
-    behavior: "smooth"
-});
+try {
+    mesScrollBox.scrollTo({
+        top: mesScrollBox.scrollHeight,
+        behavior: "smooth"
+    });
+
+}catch(e){
+    console.log(e);
+}
 
 if(window.navigator.vendor !== ''){
     chatInput.style.border = '1px solid transparent';
