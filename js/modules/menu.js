@@ -9,6 +9,7 @@ const menu = document.querySelector('.header__menu-wrapper');
 const mobileNavs = document.querySelectorAll('.header__nav-mobile');
 const mobileMenu = document.querySelector('.header__mobile-wrapper');
 const blackBg = document.querySelector('.black');
+export let mobileMenuActive = false;
 
 let topMargin = 0;
 
@@ -29,39 +30,42 @@ lang.addEventListener(clickAction, (e)=>{
     e.stopPropagation();
 });
 
-if(window.innerWidth < 991){ /*getComputedStyle(mobileNavs[0]).display !== 'none'*/
-    console.log(1);
-    burgerVisible.addEventListener(clickAction, () => {
-        console.log('событие')
-        mobileNavs.forEach(item => {
-            item.classList.add('open');
+export const mobileMenuInit = () => {
+    if(mobileMenuActive){
+        return;
+    }
+    if (window.innerWidth < 991) { /*getComputedStyle(mobileNavs[0]).display !== 'none'*/
+        mobileMenuActive = true;
+        burgerVisible.addEventListener(clickAction, () => {
+            mobileNavs.forEach(item => {
+                item.classList.add('open');
+            });
+            burgerHidden.classList.add('header__nav-mobile-block-show');
+            mobileMenu.classList.add('header__mobile-wrapper-show');
+            blackBg.classList.add('black-show');
         });
-        burgerHidden.classList.add('header__nav-mobile-block-show');
-        mobileMenu.classList.add('header__mobile-wrapper-show');
-        blackBg.classList.add('black-show');
-    });
 
-    burgerHidden.addEventListener(clickAction, () => {
-        console.log('событие')
-        mobileNavs.forEach(item => {
-            item.classList.remove('open');
+        burgerHidden.addEventListener(clickAction, () => {
+            mobileNavs.forEach(item => {
+                item.classList.remove('open');
+            });
+            burgerHidden.classList.remove('header__nav-mobile-block-show');
+            mobileMenu.classList.remove('header__mobile-wrapper-show');
+            blackBg.classList.remove('black-show');
         });
-        burgerHidden.classList.remove('header__nav-mobile-block-show');
-        mobileMenu.classList.remove('header__mobile-wrapper-show');
-        blackBg.classList.remove('black-show');
-    });
 
-    blackBg.addEventListener(clickAction, () => {
-        console.log('событие')
-        mobileNavs.forEach(item => {
-            item.classList.remove('open');
+        blackBg.addEventListener(clickAction, () => {
+            mobileNavs.forEach(item => {
+                item.classList.remove('open');
+            });
+            burgerHidden.classList.remove('header__nav-mobile-block-show');
+            mobileMenu.classList.remove('header__mobile-wrapper-show');
+            blackBg.classList.remove('black-show');
         });
-        burgerHidden.classList.remove('header__nav-mobile-block-show');
-        mobileMenu.classList.remove('header__mobile-wrapper-show');
-        blackBg.classList.remove('black-show');
-    });
-    console.log(2)
+    }
 }
+
+mobileMenuInit();
 
 
 window.addEventListener(scrollAction, () => {

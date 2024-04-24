@@ -1,5 +1,6 @@
 import SimpleBar from 'simplebar';
 import {clickAction, isMobile} from './actions';
+import {mobileMenuInit} from './menu';
 
 //Scroll
 const mesBar = new SimpleBar(document.getElementById('mes-box'), {
@@ -95,6 +96,7 @@ chatClose.addEventListener(clickAction, (e) => {
 })
 
 window.addEventListener('resize', () => {
+    mobileMenuInit();
     mesBoxWrapper.style.height = 'calc(100% - 70px - 20px - 66px)';
     mesBox.style.height = 'calc(100% - 20px)';
     maxMesBoxHeight = Number(getComputedStyle(mesBox).height.slice(0, -2));
