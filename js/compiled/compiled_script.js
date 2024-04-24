@@ -162,7 +162,7 @@ lang.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
   langHidden.classList.toggle('show');
   e.stopPropagation();
 });
-if (getComputedStyle(mobileNavs[0]).display !== 'none') {
+if (window.innerWidth < 991 /*getComputedStyle(mobileNavs[0]).display !== 'none'*/) {
   burgerVisible.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, () => {
     mobileNavs.forEach(item => {
       item.classList.add('open');
@@ -2380,7 +2380,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_questions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_questions__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/swiper */ "./modules/swiper.js");
 /* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_swiper__WEBPACK_IMPORTED_MODULE_3__);
-alert(1);
 
 
 
