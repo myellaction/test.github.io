@@ -66,7 +66,7 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 464px;
+  height: 524px;
   transition: height 0.8s;
 }
 .about__tech {
@@ -119,6 +119,43 @@ body {
 @media (max-width: 1199px) {
   .about {
     margin-bottom: 66px;
+  }
+}
+@media (max-width: 767px) {
+  .header__wrapper {
+    padding-top: 100px;
+  }
+  .about {
+    margin-bottom: 40px;
+  }
+  .about__title {
+    margin-bottom: 32px;
+  }
+  .about__tech-box {
+    height: 494px;
+  }
+  .about__tech-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .about__block {
+    flex-wrap: wrap;
+  }
+  .about__part {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  .about__part-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .header__wrapper {
+    padding-top: 76px;
+  }
+  .about__tech-box {
+    height: 518px;
   }
 }
 

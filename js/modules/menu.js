@@ -24,6 +24,7 @@ const rotateArrow = () => {
     }
 }
 
+
 lang.addEventListener(clickAction, (e)=>{
     rotateArrow();
     langHidden.classList.toggle('show');

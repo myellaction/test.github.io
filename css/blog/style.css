@@ -70,6 +70,9 @@
   transition: background-color 5000s ease-in-out 0s;
   caret-color: rgba(255, 255, 255, 0.8);
 }
+.search__form-mobile {
+  display: none;
+}
 .search__sort {
   display: flex;
   justify-content: flex-end;
@@ -98,6 +101,9 @@
 
 .posts {
   margin-bottom: 80px;
+}
+.posts__mobile-show {
+  display: none;
 }
 .posts__box {
   display: flex;
@@ -160,12 +166,22 @@
     margin-bottom: 48px;
   }
   .search__cats-find {
-    flex-direction: column;
     padding-top: 32px;
+    flex-direction: column-reverse;
+    padding-bottom: 28px;
+  }
+  .search__find {
+    margin-bottom: 32px;
     padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1px;
   }
   .search__cats {
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+  }
+  .search__cat {
+    margin-bottom: 4px;
   }
   .posts {
     margin-bottom: 66px;
@@ -263,13 +279,6 @@
   .search {
     margin-bottom: 40px;
   }
-  .search__cats {
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-  .search__cat {
-    margin-bottom: 4px;
-  }
   .posts {
     margin-bottom: 60px;
   }
@@ -294,6 +303,66 @@
   }
   .posts__pages-box a, .posts__pages-box span {
     margin-right: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .header {
+    height: 690px;
+  }
+  .header__wrapper {
+    padding-top: 76px;
+  }
+  .header__post-img {
+    height: 192px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .search {
+    margin-bottom: 32px;
+  }
+  .search__cats-find {
+    padding-top: 20px;
+    padding-bottom: 16px;
+  }
+  .search__find {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .search__form input {
+    width: 100%;
+  }
+  .search__form-mobile {
+    display: flex;
+  }
+  .search__form-standart {
+    display: none;
+  }
+  .search__sort {
+    justify-content: center;
+  }
+  .search__sort-item {
+    margin-right: 12px;
+  }
+  .posts {
+    margin-bottom: 40px;
+  }
+  .posts__mobile-show {
+    display: block;
+  }
+  .posts__mobile-hide {
+    display: none;
+  }
+  .posts__box {
+    margin-bottom: 0;
+  }
+  .posts__post {
+    width: 100%;
+  }
+  .posts__post img {
+    width: 100%;
+  }
+  .posts__pages-box {
+    padding: 20px;
   }
 }
 

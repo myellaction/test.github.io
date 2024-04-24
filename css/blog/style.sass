@@ -72,6 +72,9 @@
             transition: background-color 5000s ease-in-out 0s
             caret-color: rgba(255, 255, 255, 0.8)
 
+    &__form-mobile
+        display: none
+
     &__sort
         display: flex
         justify-content: flex-end
@@ -99,6 +102,9 @@
 
 .posts
     margin-bottom: $title-margin
+
+    &__mobile-show
+        display: none
 
     &__box
         display: flex
@@ -150,4 +156,5 @@
 @import 'adaptive/1199'
 @import 'adaptive/991'
 @import 'adaptive/767'
+@import "adaptive/575"
 

@@ -12,5 +12,15 @@
     padding-top: 60px;
   }
 }
+@media (max-width: 767px) {
+  .header__wrapper {
+    padding-top: 48px;
+  }
+}
+@media (max-width: 575px) {
+  .header__wrapper {
+    padding-top: 44px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

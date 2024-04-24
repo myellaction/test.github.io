@@ -84,9 +84,13 @@
                 <a href="#" class="search__cat">Програмування</a>
             </div>
             <div class="search__find">
-                <form class="search__form" method="get">
+                <form class="search__form search__form-standart" method="get">
                     <label for="find-post"><img src="icons/search.svg"></label>
                     <input name="name" id="find-post" class="small" placeholder="Пошук запису за ключовими словами...">
+                </form>
+                <form class="search__form search__form-mobile" method="get">
+                    <label for="find-post-mobile"><img src="icons/search.svg"></label>
+                    <input name="name" id="find-post-mobile" class="small" placeholder="Пошук запису...">
                 </form>
             </div>
         </div>
@@ -198,13 +202,15 @@
         </div>
         <div class="posts__pages">
             <div class="posts__pages-box small">
-                <a href="#" class="posts__prev">Назад</a>
+                <a href="#" class="posts__prev posts__mobile-hide">Назад</a>
+                <a href="#" class="posts__prev posts__mobile-show"><img src="icons/arrow-prev.svg"></a>
                 <a href="#" class="posts__page-num">1</a>
                 <a href="#" class="posts__page-num">2</a>
                 <a class="posts__page-num posts__page-selected body-bold">3</a>
                 <span class="posts__page-num">...</span>
                 <a href="#" class="posts__page-num">6</a>
-                <a href="#" class="posts__next">Вперед</a>
+                <a href="#" class="posts__next posts__mobile-hide">Вперед</a>
+                <a href="#" class="posts__next posts__mobile-show"><img src="icons/arrow-next.svg"></a>
             </div>
         </div>
     </div>
@@ -377,6 +383,12 @@
         </div>
     </form>
 </div>
+
+<!--Eruda-->
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
+<!--End Eruda-->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/scroll/simplebar.js"></script>
 <script src="js/compiled/compiled_script.js"></script>
