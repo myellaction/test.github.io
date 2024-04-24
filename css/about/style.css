@@ -26,7 +26,7 @@ body {
   margin-bottom: 40px;
 }
 .about__part {
-  width: 360px;
+  width: 30%;
   padding: 20px;
   border-radius: 20px;
   background-color: #292B2E;
@@ -61,12 +61,13 @@ body {
 }
 .about__block {
   display: flex;
+  justify-content: space-between;
 }
 .about__tech-box {
   position: relative;
-  width: 100%;
+  width: 67%;
   overflow: hidden;
-  height: 524px;
+  min-height: 524px;
   transition: height 0.8s;
 }
 .about__tech {
@@ -132,7 +133,8 @@ body {
     margin-bottom: 32px;
   }
   .about__tech-box {
-    height: 494px;
+    width: 100%;
+    min-height: 494px;
   }
   .about__tech-title {
     font-size: 24px;
@@ -155,7 +157,7 @@ body {
     padding-top: 76px;
   }
   .about__tech-box {
-    height: 518px;
+    min-height: 518px;
   }
 }
 

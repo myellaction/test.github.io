@@ -7,6 +7,8 @@ const blockBackend = document.querySelector('.about__tech-backend');
 const techBox = document.querySelector('.about__tech-box');
 const hiddenBlocks = document.querySelectorAll('.about__tech.hidden');
 
+let currentTechBlock = blockFrontend;
+
 hiddenBlocks.forEach(item => {
     item.style.top = '-' + getComputedStyle(item).height;
 });
@@ -16,9 +18,11 @@ const hideAndShowTech = (toHide, toShow) => {
     if(toHide === blockFrontend){
         btnHide = btnFrontend;
         btnShow = btnBackend;
+        currentTechBlock = blockBackend;
     } else {
         btnHide = btnBackend;
         btnShow = btnFrontend;
+        currentTechBlock = blockFrontend;
     }
     const blockHeight = getComputedStyle(toShow).height;
     techBox.style.height = blockHeight;
@@ -50,5 +54,9 @@ btnBackend.addEventListener('click', () => {
     }
 });
 
-
+window.addEventListener('resize', () => {
+    setTimeout(() => {
+        techBox.style.height = currentTechBlock.clientHeight + 'px';
+    }, 900);
+});
 
