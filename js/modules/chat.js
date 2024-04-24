@@ -62,10 +62,12 @@ chatInput.addEventListener('input', () => {
         const newChatPanelHeight = chatPanel.clientHeight;
         const currentHeight = maxMesBoxHeight - (newChatPanelHeight - 66);
         mesBox.style.height = currentHeight + 'px';
-        mesScrollBox.scrollTo({
-            top: mesScrollBox.scrollHeight,
-            behavior: 'smooth'
-        });
+        try {
+            mesScrollBox.scrollTo({
+                top: mesScrollBox.scrollHeight,
+                behavior: 'smooth'
+            });
+        }catch(e){console.log(e)}
         prevChatInputHeight = chatInputHeight;
     }
 });
@@ -80,10 +82,12 @@ chatIcon.addEventListener(clickAction, (e) => {
     if(isMobile){
         document.querySelector('body').style.overflow = 'hidden';
     }
-    mesScrollBox.scrollTo({
-        top: mesScrollBox.scrollHeight,
-        behavior: "smooth"
-    });
+    try {
+        mesScrollBox.scrollTo({
+            top: mesScrollBox.scrollHeight,
+            behavior: "smooth"
+        });
+    }catch(e){console.log(e)}
     e.stopPropagation();
     chatIcon.classList.add('hide-chat-icon');
     chat.classList.add('show-chat');

@@ -93,10 +93,14 @@ chatInput.addEventListener('input', () => {
     const newChatPanelHeight = chatPanel.clientHeight;
     const currentHeight = maxMesBoxHeight - (newChatPanelHeight - 66);
     mesBox.style.height = currentHeight + 'px';
-    mesScrollBox.scrollTo({
-      top: mesScrollBox.scrollHeight,
-      behavior: 'smooth'
-    });
+    try {
+      mesScrollBox.scrollTo({
+        top: mesScrollBox.scrollHeight,
+        behavior: 'smooth'
+      });
+    } catch (e) {
+      console.log(e);
+    }
     prevChatInputHeight = chatInputHeight;
   }
 });
@@ -109,10 +113,14 @@ chatIcon.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e =
   if (_actions__WEBPACK_IMPORTED_MODULE_1__.isMobile) {
     document.querySelector('body').style.overflow = 'hidden';
   }
-  mesScrollBox.scrollTo({
-    top: mesScrollBox.scrollHeight,
-    behavior: "smooth"
-  });
+  try {
+    mesScrollBox.scrollTo({
+      top: mesScrollBox.scrollHeight,
+      behavior: "smooth"
+    });
+  } catch (e) {
+    console.log(e);
+  }
   e.stopPropagation();
   chatIcon.classList.add('hide-chat-icon');
   chat.classList.add('show-chat');
