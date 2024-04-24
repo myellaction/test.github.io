@@ -12,7 +12,7 @@ const chatPanel = document.querySelector('.chat__panel');
 const mesBox = document.querySelector('.chat__box');
 const mesBoxWrapper = document.querySelector('.chat__box-wrapper');
 
-const mesScrollBox = mesBar.getScrollElement();
+const mesScrollBox = mesBar.getScrollElement() || document.querySelector('.chat__box .simplebar-content-wrapper');
 
 try {
     mesScrollBox.scrollTo({
