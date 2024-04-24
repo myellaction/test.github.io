@@ -162,8 +162,11 @@ lang.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, e => {
   langHidden.classList.toggle('show');
   e.stopPropagation();
 });
-if (window.innerWidth < 991 /*getComputedStyle(mobileNavs[0]).display !== 'none'*/) {
+if (window.innerWidth < 991) {
+  /*getComputedStyle(mobileNavs[0]).display !== 'none'*/
+  console.log(1);
   burgerVisible.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, () => {
+    console.log('событие');
     mobileNavs.forEach(item => {
       item.classList.add('open');
     });
@@ -172,6 +175,7 @@ if (window.innerWidth < 991 /*getComputedStyle(mobileNavs[0]).display !== 'none'
     blackBg.classList.add('black-show');
   });
   burgerHidden.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, () => {
+    console.log('событие');
     mobileNavs.forEach(item => {
       item.classList.remove('open');
     });
@@ -180,6 +184,7 @@ if (window.innerWidth < 991 /*getComputedStyle(mobileNavs[0]).display !== 'none'
     blackBg.classList.remove('black-show');
   });
   blackBg.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.clickAction, () => {
+    console.log('событие');
     mobileNavs.forEach(item => {
       item.classList.remove('open');
     });
@@ -187,6 +192,7 @@ if (window.innerWidth < 991 /*getComputedStyle(mobileNavs[0]).display !== 'none'
     mobileMenu.classList.remove('header__mobile-wrapper-show');
     blackBg.classList.remove('black-show');
   });
+  console.log(2);
 }
 window.addEventListener(_actions__WEBPACK_IMPORTED_MODULE_1__.scrollAction, () => {
   if (window.scrollY < 1) {

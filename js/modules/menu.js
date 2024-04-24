@@ -29,8 +29,10 @@ lang.addEventListener(clickAction, (e)=>{
     e.stopPropagation();
 });
 
-if(window.innerWidth < 991/*getComputedStyle(mobileNavs[0]).display !== 'none'*/){
+if(window.innerWidth < 991){ /*getComputedStyle(mobileNavs[0]).display !== 'none'*/
+    console.log(1);
     burgerVisible.addEventListener(clickAction, () => {
+        console.log('событие')
         mobileNavs.forEach(item => {
             item.classList.add('open');
         });
@@ -40,6 +42,7 @@ if(window.innerWidth < 991/*getComputedStyle(mobileNavs[0]).display !== 'none'*/
     });
 
     burgerHidden.addEventListener(clickAction, () => {
+        console.log('событие')
         mobileNavs.forEach(item => {
             item.classList.remove('open');
         });
@@ -49,6 +52,7 @@ if(window.innerWidth < 991/*getComputedStyle(mobileNavs[0]).display !== 'none'*/
     });
 
     blackBg.addEventListener(clickAction, () => {
+        console.log('событие')
         mobileNavs.forEach(item => {
             item.classList.remove('open');
         });
@@ -56,6 +60,7 @@ if(window.innerWidth < 991/*getComputedStyle(mobileNavs[0]).display !== 'none'*/
         mobileMenu.classList.remove('header__mobile-wrapper-show');
         blackBg.classList.remove('black-show');
     });
+    console.log(2)
 }
 
 
